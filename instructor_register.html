@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<title>Ubhan Drive - Register</title>
+
+<link rel="shortcut icon" href="assets/img/favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<div class="main-wrapper login-body">
+<div class="login-wrapper">
+<div class="container">
+<div class="loginbox">
+<div class="login-left">
+<img class="img-fluid" src="assets/img/login.png" alt="Logo">
+</div>
+<div class="login-right">
+<div class="login-right-wrap">
+<h1>Sign Up</h1>
+<p class="account-subtitle">Enter details to create your account</p>
+
+<form onsubmit="register(event)" id="register-form">
+<div class="form-group">
+    <label style="font-size: 13px;">ENTER YOUR EMAIL</label>
+    <input type="email" id="reg-email" name="email" class="form-control" required>
+</div>
+
+<div class="form-group">
+    <label for="first_name" style="font-size: 13px;">FIRST NAME</label>
+    <input type="text" id="first_name" name="firstname" class="form-control" required>
+</div>
+
+<div class="form-group">
+    <label for="last_name" style="font-size: 13px;">LAST NAME</label>
+    <input type="text" id="last_name" name="lastname" class="form-control" required>
+</div>
+
+<div class="form-group">
+    <label style="font-size: 13px;">PASSWORD</label>
+    <input type="password" id="reg-password" name="password" class="form-control" required>
+</div>
+
+<div class=" dont-have">Already Registered? <a href="login.html">Login</a></div>
+<div class="form-group mb-0">
+    <input type="submit" id="signup" name="signup" value="SIGNUP" class="btn btn-primary btn-block" />
+</div>
+</form>
+
+<div class="login-or">
+<span class="or-line"></span>
+<span class="span-or">or</span>
+</div>
+
+<div class="social-login">
+<a href="#"><i class="fab fa-google-plus-g"></i></a>
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-twitter"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+<script>
+// Initialize Firebase with your configuration details
+var firebaseConfig = {
+            apiKey: "AIzaSyARxuWgmAcVMuHI2pRmUdBFy9anXcdVKWI",
+        authDomain: "ubhan-drive.firebaseapp.com",
+        databaseURL: "https://ubhan-drive-default-rtdb.firebaseio.com",
+        projectId: "ubhan-drive",
+        storageBucket: "ubhan-drive.appspot.com",
+        messagingSenderId: "59364518993",
+        appId: "1:59364518993:web:1c35633659058936fc5c70",
+        measurementId: "G-BXH3GXT4ZY"
+      
+        };
+firebase.initializeApp(firebaseConfig);
+
+function register(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    var email = document.getElementById("reg-email").value;
+    var password = document.getElementById("reg-password").value;
+    var firstName = document.getElementById("first_name").value;
+    var lastName = document.getElementById("last_name").value;
+
+    // Basic email validation
+    if (!email) {
+        alert("Please enter your email.");
+        return;
+    }
+
+    // Basic first name validation
+    if (!firstName) {
+        alert("Please enter your first name.");
+        return;
+    }
+
+    // Basic last name validation
+    if (!lastName) {
+        alert("Please enter your last name.");
+        return;
+    }
+
+    // Password validation (you can enhance this)
+    if (!password || password.length < 8) {
+        alert("Password must be at least 8 characters long.");
+        return;
+    }
+
+    // Perform Firebase registration if all validations pass
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(function (userCredential) {
+            // Registration successful, you can do additional tasks here
+            console.log("Registration successful!");
+            // Redirect to another page
+            window.location = "instructor_login.html";
+        })
+        .catch(function (error) {
+            console.log("Registration failed:", error.message);
+        });
+}
+</script>
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/feather.min.js"></script>
+<script src="assets/js/script.js"></script>
+</body>
+</html>

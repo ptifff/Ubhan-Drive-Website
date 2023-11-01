@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploading</title>
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/simple-calendar/simple-calendar.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Container for the boxes */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .container1 {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 100px;
+        }
+        .box h2{
+            color: #702963;
+        }
+
+        /* Style for each box */
+        .box{
+            flex: 1;
+            background-color: #c69abe;
+            color: #702963;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Adjust the styles for the second box */
+        .box:nth-child(2) {
+            background-color: #c69abe;
+        }
+
+        button[type="submit"] {
+        background-color: #702963; /* Purple background color */
+        color: #fff; /* White text color */
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        padding-top: 50px;
+    }
+
+        button[type="submit"]:hover {
+        background-color: #fff; /* White background color */
+        color: #702963; /* Purple text color */
+        transition: background-color 0.3s, color 0.3s;
+        }
+        .input{
+            padding-bottom: 50px;
+        }
+        .input-container {
+    display: flex;
+    align-items: center; /* Vertically center the elements */
+}
+
+.input-container input {
+    flex: 1; /* Take up remaining space */
+    padding: 5px; /* Adjust the padding as needed */
+    margin-right: 10px; /* Add some space between the input and button */
+}
+
+.input-container button[type="submit"] {
+    background-color: #702963;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+    </style>
+</head>
+
+<body>
+    <div class="main-wrapper">
+ /*-----------------Header Start---------------*/       
+ <div class="header">
+    <div class="header-left" style="padding-right: 1000px;">
+        <a href="teacher-dashboard.html" class="logo">
+            <img src="assets/img/logo.png" alt="Logo" >
+        </a>
+    </div>
+   
+    <!-- main nav -->
+    <nav class="navbar-collapse navbar-right" role="navigation">
+        <ul id="nav" class="nav navbar-nav menu " style="display: inline; padding-right: 20px;">
+            <li><a href="teacher-dashboard.html">Dashboard</a></li>
+            <li><a href="students.html">Learners</a></li>
+            <li><a href="upload_lectures.html">Lectures</a></li>
+            <li><a href="upload_quiz.html">Quizes</a></li>
+            <li><a href="add-teacher.html">Profile</a></li>
+            <li><a href="instructor_login.html">Logout</a> 
+            </li>
+        </ul>
+    </nav>
+    <!-- /main nav --> 
+   
+
+</div>
+        /*-----------------Header End---------------*/   
+
+        <div class="page-wrapper">
+            <div class="container1">
+                <div class="box">
+                    <h2 >Upload Lectures</h2>
+                    <form id="upload-form">
+                        <input type="file" id="lecture-file" required>
+                        <div class="input-container"> <!-- New container for input and button -->
+                            <input type="text" id="lecture-name" placeholder="Lecture Name" required>
+                            <button type="submit">Upload Lecture</button>
+                        </div>
+                    </form>
+                    <p id="upload-status"></p>
+                
+                    <!-- Include the JavaScript file as a module -->
+                </div>
+            </div>
+            <div class="container">
+                <div class="box">
+                    <h2 >Lectures</h2>
+                    <ul id="lecture-list" ></ul>
+                    <script type="module" src="assets/js/student_lecture.js"></script>
+                
+                    <!-- Include the JavaScript file as a module -->
+                </div>
+            </div>
+        </div>
+       
+    
+    
+
+</div>
+<script type="module" src="assets/js/upload_lecture.js"></script>
+</body>
+</html>

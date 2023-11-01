@@ -1,0 +1,288 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stay organized with our user-friendly Calendar featuring events, reminders, and a customizable interface. Built with HTML, CSS, and JavaScript. Start scheduling today!"
+    />
+    <meta
+      name="keywords"
+      content="calendar, events, reminders, javascript, html, css, open source coding"
+    />
+    <title>Insructor - Dashboard</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/simple-calendar/simple-calendar.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/css/cal.css" />
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+
+        <div class="header">
+            <div class="header-left" style="padding-right: 1000px;">
+                <a href="teacher-dashboard.html" class="logo">
+                    <img src="assets/img/logo.png" alt="Logo" >
+                </a>
+            </div>
+           
+            <!-- main nav -->
+            <nav class="navbar-collapse navbar-right" role="navigation">
+                <ul id="nav" class="nav navbar-nav menu " style="display: inline; padding-right: 20px;">
+                    <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                    <li><a href="students.html">Learners</a></li>
+                    <li><a href="upload_lectures.html">Lectures</a></li>
+                    <li><a href="upload_quiz.html">Quizes</a></li>
+                    <li><a href="add-teacher.html">Profile</a></li>
+                    <li><a href="instructor_login.html">Logout</a> 
+                    </li>
+                </ul>
+            </nav>
+            <!-- /main nav --> 
+           
+        
+        </div>
+        
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-sub-header">
+                                <h3 class="page-title">Welcome Instructor!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h3><a href="upload_lectures.html">Uploading Lectures</a></h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="assets/img/icons/teacher-icon-01.svg" alt="Dashboard Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h3><a href="students.html">Learner</a></h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="assets/img/icons/dash-icon-01.svg" alt="Dashboard Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h3><a href="upload_quiz.html">Quizes</a></h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="assets/img/icons/teacher-icon-02.svg" alt="Dashboard Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-sm-6 col-12 d-flex">
+                        <div class="card bg-comman w-100">
+                            <div class="card-body">
+                                <div class="db-widgets d-flex justify-content-between align-items-center">
+                                    <div class="db-info">
+                                        <h3><a href="students.html">Profile</a></h3>
+                                    </div>
+                                    <div class="db-icon">
+                                        <img src="assets/img/icons/teacher-icon-03.svg" alt="Dashboard Icon">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12 col-lg-12 col-xl-8">
+                        <div class="row">
+                            <div class="col-12 col-lg-12 col-xl-12 d-flex">
+                                <div class="card flex-fill comman-shadow">
+                                    <div class="card-header">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <h5 class="card-title">Instructor Activity</h5>
+                                            </div>
+                                            <div class="col-6">
+                                                <ul class="chart-list-out">
+                                                    <li><span class="circle-blue"></span>Instructor</li>
+                                                    <li><span class="circle-green"></span>Learner</li>
+                                                    <li class="star-menus"><a href="javascript:;"><i
+                                                                class="fas fa-ellipsis-v"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div id="school-area"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-12 col-xl-4 d-flex">
+                        <div class="card flex-fill comman-shadow">
+                            <div class="card-body">
+                               <div class="container">
+                        <div class="left">
+                          <div class="calendar">
+                            <div class="month">
+                              <i class="fas fa-angle-left prev"></i>
+                              <div class="date">december 2015</div>
+                              <i class="fas fa-angle-right next"></i>
+                            </div>
+                            <div class="weekdays">
+                              <div>Sun</div>
+                              <div>Mon</div>
+                              <div>Tue</div>
+                              <div>Wed</div>
+                              <div>Thu</div>
+                              <div>Fri</div>
+                              <div>Sat</div>
+                            </div>
+                            <div class="days"></div>
+                            <div class="goto-today">
+                              <div class="goto">
+                                <input type="text" placeholder="mm/yyyy" class="date-input" />
+                                <button class="goto-btn">Go</button>
+                              </div>
+                              <button class="today-btn">Today</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="right">
+                          <div class="today-date">
+                            <div class="event-day">wed</div>
+                            <div class="event-date">12th december 2022</div>
+                          </div>
+                          <div class="events"></div>
+                          <div class="add-event-wrapper">
+                            <div class="add-event-header">
+                              <div class="title">Add Event</div>
+                              <i class="fas fa-times close"></i>
+                            </div>
+                            <div class="add-event-body">
+                              <div class="add-event-input">
+                                <input type="text" placeholder="Event Name" class="event-name" />
+                              </div>
+                              <div class="add-event-input">
+                                <input
+                                  type="text"
+                                  placeholder="Event Time From"
+                                  class="event-time-from"
+                                />
+                              </div>
+                              <div class="add-event-input">
+                                <input
+                                  type="text"
+                                  placeholder="Event Time To"
+                                  class="event-time-to"
+                                />
+                              </div>
+                            </div>
+                            <div class="add-event-footer">
+                              <button class="add-event-btn">Add Event</button>
+                            </div>
+                            <div class="add-event-content">
+                              <!-- Other input fields for the event -->
+                              <button class="update-event-btn">Update</button>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="add-event">
+                          <i class="fas fa-plus"></i>
+                        </button>
+                      </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <footer>
+                <p>Copyright © 2023 JUW.</p>
+            </footer>
+
+        </div>
+
+    </div>
+
+
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/feather.min.js"></script>
+
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="assets/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="assets/plugins/apexchart/chart-data.js"></script>
+
+    <script src="assets/plugins/simple-calendar/jquery.simple-calendar.js"></script>
+    <script src="assets/js/calander.js"></script>
+
+    <script src="assets/js/circle-progress.min.js"></script>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/cal.js"></script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Student</title>
+  <link rel="shortcut icon" href="assets/img/favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+<link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+
+<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+ 
+</head>
+<body>
+  <div class="header">
+    <div class="header-left" style="padding-right: 1000px;">
+        <a href="student-dashboard.html" class="logo">
+            <img src="assets/img/logo.png" alt="Logo" >
+        </a>
+    </div>
+   
+    <!-- main nav -->
+    <nav class="navbar-collapse navbar-right" role="navigation">
+        <ul id="nav" class="nav navbar-nav menu " style="display: inline; padding-right: 20px;">
+            <li><a href="student-dashboard.html">Dashboard</a></li>
+            <li><a href="student_lecture.html">Lectures</a></li>
+            <li><a href="student_quiz.html">Quizes</a></li>
+            <li><a href="add-student.html">Profile</a></li>
+            <li><a href="login.html">Logout</a> 
+            </li>
+        </ul>
+    </nav>
+    <!-- /main nav --> 
+   
+
+</div>
+  <div class="page-wrapper">
+    <div class="content container-fluid">
+    
+    <div class="page-header">
+    <div class="row align-items-center">
+    <div class="col">
+    <h3 class="page-title">Add Learner</h3>
+    </div>
+    </div>
+    </div>
+    
+    <div class="row">
+    <div class="col-sm-12">
+    <div class="card">
+    <div class="card-body">
+    <form action="" method="post" role="form" class="php-email-form" id="instructoradd" onsubmit="return validateForm()">
+    <div class="row">
+    <div class="col-12">
+    <h5 class="form-title"><span>Basic Details</span></h5>
+    </div>
+    <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>CNIC</label>
+          <input id="cnic" class="form-control" type="text" placeholder="Enter CNIC Number"required>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>First Name <span class="login-danger">*</span></label>
+          <input id="firstname" class="form-control" type="text" placeholder="Enter First Name"required>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Last Name <span class="login-danger">*</span></label>
+          <input id="lastname" class="form-control" type="text" placeholder="Enter First Name">
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Gender <span class="login-danger">*</span></label>
+          <select id="gender" class="form-control select">
+            <option>Select Gender</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Others</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms ">
+          <label for="dob">Date of Birth<span class="login-danger">*</span></label>
+            <input type="date" id="dob" class="form-control"name="dob"  placeholder="Enter Date of Birth"required>
+
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Blood Group <span class="login-danger">*</span></label>
+          <select id="bloodGroup" class="form-control select">
+            <option>Please Select Group</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>A-</option>
+            <option>A+</option>
+            <option>O+</option>
+            <option>O-</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Learning Licence Number <span class="login-danger">*</span></label>
+          <input id="licence" class="form-control" type="text" placeholder="Enter Licence Number"required>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>E-Mail <span class="login-danger">*</span></label>
+          <input id="email" class="form-control" type="text" placeholder="Enter Email Address"required>
+        </div>
+      </div>
+    
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Address <span class="login-danger">*</span></label>
+          <input id="address" class="form-control" type="text" placeholder="Enter Address"required>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Licence Expiry</label>
+          <input id="licenceexpiry" class="form-control" type="text" placeholder="Enter Licence Expiry"required>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div class="form-group local-forms">
+          <label>Phone</label>
+          <input id="phone" class="form-control" type="text" placeholder="Enter Phone Number"required>
+        </div>
+      </div>
+    
+      <div class="crud row">
+        <div class="col-3">
+          <div class="student-submit">
+            <button id="Insbtn" type="submit" class="btn btn-primary">Insert</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="student-submit">
+            <button id="Selbtn" type="submit" class="btn btn-primary">Select</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="student-submit">
+            <button id="Updbtn" type="submit" class="btn btn-primary">Update</button>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="student-submit">
+            <button id="Delbtn" type="submit" class="btn btn-primary">Delete</button>
+          </div>
+        </div>
+      </div>
+    
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyARxuWgmAcVMuHI2pRmUdBFy9anXcdVKWI",
+          authDomain: "ubhan-drive.firebaseapp.com",
+          databaseURL: "https://ubhan-drive-default-rtdb.firebaseio.com",
+          projectId: "ubhan-drive",
+          storageBucket: "ubhan-drive.appspot.com",
+          messagingSenderId: "59364518993",
+          appId: "1:59364518993:web:1c35633659058936fc5c70",
+          measurementId: "G-BXH3GXT4ZY"
+        };
+    
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+    
+        import { getDatabase, ref, set, get, child, update, remove } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
+        const db = getDatabase();
+    
+        //------------------------Reference--------------------------------//
+        var cnic = document.getElementById("cnic");
+        var firstname = document.getElementById("firstname");
+        var lastname = document.getElementById("lastname");
+        var gender = document.getElementById("gender");
+        var dob = document.getElementById("dob");
+        var bloodGroup = document.getElementById("bloodGroup");
+        var licence = document.getElementById("licence");
+        var email = document.getElementById("email");
+        var address = document.getElementById("address");
+        var licenceexpiry = document.getElementById("licenceexpiry");
+        var phone = document.getElementById("phone");
+    
+        var insBtn = document.getElementById("Insbtn");
+        var selBtn = document.getElementById("Selbtn"); // Corrected ID to "Selbtn"
+        var updBtn = document.getElementById("Updbtn");
+        var delBtn = document.getElementById("Delbtn");
+    
+        //------------------Insert Data------------------------------//
+        function InsertData() {
+  // Get references to the form fields
+  const cnicValue = cnic.value;
+  const firstnameValue = firstname.value;
+  const lastnameValue = lastname.value;
+  const genderValue = gender.value;
+  const dobValue = dob.value;
+  const bloodGroupValue = bloodGroup.value;
+  const licenceValue = licence.value;
+  const emailValue = email.value;
+  const addressValue = address.value;
+  const licenceexpiryValue = licenceexpiry.value;
+  const phoneValue = phone.value;
+
+  // Check if any of the fields are empty
+  if (
+    !cnicValue ||
+    !firstnameValue ||
+    !lastnameValue ||
+    !genderValue ||
+    !dobValue ||
+    !bloodGroupValue ||
+    !licenceValue ||
+    !emailValue ||
+    !addressValue ||
+    !licenceexpiryValue ||
+    !phoneValue
+  ) {
+    alert("Please fill in all the required fields");
+    return false; // Prevent data submission
+  }
+  const cnicRegix = /^[0-9]{5}-[0-9]{7}-[0-9]{1}$/;
+    if (!cnicRegix.test(cnicValue)) {
+      alert('please enter this format for cnic: 00000-0000000-0000');
+      return false;
+    }
+
+    // Validate Pakistani license number
+  const licenseRegex = /^[A-Z0-9]{2}-[0-9]{2}-[0-9]{5}$/;
+  if (!licenseRegex.test(licenceValue)) {
+    alert("Please enter a valid Pakistani license number in the format: AB-12-12345");
+    return false;
+  }
+
+  const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+  if (!emailRegex.test(emailValue)) {
+    alert("Please filled email according to this format:name@account.com");
+    return false; // Prevent data submission
+  }
+
+  // Example: Validate phone number format
+  const phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(phoneValue)) {
+    alert("Please enter a valid 11-digit phone number");
+    return false; // Prevent data submission
+  }
+
+
+  // If all fields are filled, proceed with data insertion
+  set(ref(db, "Learner/" + cnicValue), {
+    cnic: cnicValue,
+    firstname: firstnameValue,
+    lastname: lastnameValue,
+    gender: genderValue,
+    dob: dobValue,
+    bloodGroup: bloodGroupValue,
+    licence: licenceValue,
+    email: emailValue,
+    address: addressValue,
+    licenceexpiry: licenceexpiryValue,
+    phone: phoneValue,
+  })
+    .then(() => {
+      alert("Data stored successfully");
+    })
+    .catch((error) => {
+      alert("Unsuccessful, error: " + error);
+    });
+
+}
+        //------------------Select Data------------------------------//
+        function SelectData() {
+          const dbref = ref(db);
+          get(child(dbref, "Learner/" + cnic.value))
+            .then((snapshot) => {
+              if (snapshot.exists()) {
+                cnic.value = snapshot.val().cnic;
+                firstname.value = snapshot.val().firstname;
+                lastname.value = snapshot.val().lastname;
+                gender.value = snapshot.val().gender;
+                dob.value = snapshot.val().dob;
+                bloodGroup.value = snapshot.val().bloodGroup;
+                licence.value = snapshot.val().licence;
+                email.value = snapshot.val().email;
+                address.value = snapshot.val().address;
+                licenceexpiry.value = snapshot.val().licenceexpiry;
+                phone.value = snapshot.val().phone;
+    
+              } else {
+                alert("No data found");
+              }
+            })
+            .catch((error) => {
+              alert("Unsuccessful, error: " + error);
+            });
+
+        }
+    
+        //------------------Update Data------------------------------//
+        function UpdateData() {
+          update(ref(db, "Learner/" + cnic.value), {
+            cnic: cnic.value,
+            firstname: firstname.value,
+            lastname: lastname.value,
+            gender: gender.value,
+            dob: dob.value,
+            bloodGroup: bloodGroup.value,
+            licence: licence.value,
+            email: email.value,
+            address: address.value,
+            licenceexpiry: licenceexpiry.value,
+            phone: phone.value,
+          })
+            .then(() => {
+              alert("Data updated successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessful, error: " + error);
+            });
+        }
+    
+        //------------------Delete Data------------------------------//
+        function DeleteData() {
+          remove(ref(db, "Learner/" + cnic.value))
+            .then(() => {
+              alert("Data removed successfully");
+            })
+            .catch((error) => {
+              alert("Unsuccessful, error: " + error);
+            });
+        }
+        // dob
+        const instructoradd = document.getElementById("instructoradd");
+
+        instructoradd.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const selectedDate = document.getElementById("dob").value;
+    
+});
+        // dob
+    
+        //------------------Assign Events to Btns-------------------//
+        insBtn.addEventListener('click', InsertData);
+        selBtn.addEventListener("click", SelectData);
+        updBtn.addEventListener('click', UpdateData);
+        delBtn.addEventListener('click', DeleteData);
+    
+      </script>
+    
+    
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="assets/js/feather.min.js"></script>
+    
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    
+    <script src="assets/plugins/select2/js/select2.min.js"></script>
+    
+    <script src="assets/plugins/moment/moment.min.js"></script>
+    <script src="assets/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    
+    
+    <script src="assets/js/add_teacher.js"></script>
+    
+</body>
+</html>

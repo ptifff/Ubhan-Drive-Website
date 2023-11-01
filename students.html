@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Learner</title>
+
+    <link rel="shortcut icon" href="assets/img/favicon.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/feather/feather.css">
+
+    <link rel="stylesheet" href="assets/plugins/icons/flags/flags.css">
+
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+    <link rel="stylesheet" href="assets/plugins/datatables/datatables.min.css">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="header">
+            <div class="header-left" style="padding-right: 1000px;">
+                <a href="teacher-dashboard.html" class="logo">
+                    <img src="assets/img/logo.png" alt="Logo" >
+                </a>
+            </div>
+           
+            <!-- main nav -->
+            <nav class="navbar-collapse navbar-right" role="navigation">
+                <ul id="nav" class="nav navbar-nav menu " style="display: inline; padding-right: 20px;">
+                    <li><a href="teacher-dashboard.html">Dashboard</a></li>
+                    <li><a href="students.html">Learners</a></li>
+                    <li><a href="upload_lectures.html">Lectures</a></li>
+                    <li><a href="upload_quiz.html">Quizes</a></li>
+                    <li><a href="add-teacher.html">Profile</a></li>
+                    <li><a href="instructor_login.html">Logout</a> 
+                    </li>
+                </ul>
+            </nav>
+            <!-- /main nav --> 
+           
+        
+        </div>
+
+
+        <div class="page-wrapper">
+            <div class="content container-fluid">
+
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="page-sub-header">
+                                <h3 class="page-title">Learner</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card card-table comman-shadow">
+                            <div class="card-body">
+
+                                <div class="page-header">
+                                    <div class="row align-items-center">
+                                        <div class="col">
+                                            <h3 class="page-title">Learner's List</h3>
+                                        </div>
+                                        <div class="col-auto text-end float-end ms-auto download-grp">
+                                            <a href="add-student.html" class="btn btn-primary"><i
+                                                    class="fas fa-plus"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table
+                                        class="table border-0 star-student table-hover table-center mb-0 datatable table-striped learner">
+                                        <thead>
+                                            <th>S.NO.</th>
+                                            <th>CNIC</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Gender</th>
+                                            <th>Date of Birth</th>
+                                            <th>Blood Group</th>
+                                            <th>Learning Licence Number</th>
+                                            <th>Email</th>
+                                            <th>Address</th>
+                                            <th>Licence Expiry</th>
+                                            <th>Phone</th>
+                                            
+                                            <br>
+                                                   
+                                        </thead> 
+
+                                        <tbody id="tbody1"></tbody>
+                                    </table>                  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+
+            <footer>
+                <p>Copyright © 2023 JUW.</p>
+            </footer>
+
+        </div>
+
+    </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Firebase Data Table</title>
+        <!-- Include Firebase SDK -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+        <!-- Initialize Firebase with your config -->
+        <script>
+            var firebaseConfig = {
+                apiKey: "AIzaSyARxuWgmAcVMuHI2pRmUdBFy9anXcdVKWI",
+    authDomain: "ubhan-drive.firebaseapp.com",
+    databaseURL: "https://ubhan-drive-default-rtdb.firebaseio.com",
+    projectId: "ubhan-drive",
+    storageBucket: "ubhan-drive.appspot.com",
+    messagingSenderId: "59364518993",
+    appId: "1:59364518993:web:1c35633659058936fc5c70",
+    measurementId: "G-BXH3GXT4ZY"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+        </script>
+
+    
+        <script>
+            // Reference to your Firebase Realtime Database
+            var database = firebase.database();
+    
+            // Reference to the specific data node you want to fetch
+            var dataRef = database.ref('Learner');
+    
+            // Fetch data and populate the table
+            dataRef.on('value', function(snapshot) {
+                var tableBody = document.getElementById('tbody1');
+                tableBody.innerHTML = '';
+                var serialNumber = 1;
+                console.log("snapshot")
+                console.log(snapshot)
+    
+                snapshot.forEach(function(childSnapshot) {
+                    var childData = childSnapshot.val();
+                    console.log("childData")
+                    console.log(childData)
+                    var row = tableBody.insertRow();
+                    var serialNumberCell = row.insertCell(0);
+                    serialNumberCell.innerText = serialNumber;
+                    serialNumber++;
+    
+                    var cniCell = row.insertCell(1);
+                    var firstnameCell = row.insertCell(2);
+                    var lastnameCell = row.insertCell(3);
+                    var genderCell = row.insertCell(4);
+                    var dobCell = row.insertCell(5);
+                    var bloodgroupCell = row.insertCell(6);
+                    var licenceCell = row.insertCell(7);
+                    var emailCell = row.insertCell(8);
+                    var addressCell = row.insertCell(9);
+                    var licenceexpiryCell = row.insertCell(10);
+                    var phoneCell = row.insertCell(11);
+                   
+    
+                    cniCell.innerText = childData.cnic;
+                    firstnameCell.innerText = childData.firstname;
+                    lastnameCell.innerText = childData.lastname;
+                    genderCell.innerText = childData.gender;
+                    dobCell.innerText = childData.dob;
+                    bloodgroupCell.innerText = childData.bloodGroup;
+                    licenceCell.innerText = childData.licence;
+                    emailCell.innerText = childData.email;
+                    addressCell.innerText = childData.address;
+                    licenceexpiryCell.innerText = childData.licenceexpiry;
+                    phoneCell.innerText = childData.phone;
+                });
+            });
+        </script>
+    </body>
+    </html>
+    
+    
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <script src="assets/js/feather.min.js"></script>
+
+    <script src="assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- <script src="assets/plugins/datatables/datatables.min.js"></script> -->
+
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>
